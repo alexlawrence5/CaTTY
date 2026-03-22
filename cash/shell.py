@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import subprocess
 import time
+import os
 from colorama import Fore, init
 
 subprocess.run(["figlet", "CaSH"], text=True)
@@ -24,7 +25,13 @@ while True:
 
   elif cmd.startswith("echo "):
     print(cmd[5:])
+
+  elif cmd.startswith("mkdir "):
+    os.mkdir(cmd[6:])
     
+  elif cmd.startswith("rmdir "):
+    os.rmdir(cmd[6:])
+
   elif cmd == "install":
     inst = input("Enter package name (pacman): ")
     subprocess.run(["sudo", "pacman", "-Syu", inst], text=True)
