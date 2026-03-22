@@ -4,6 +4,7 @@ import time
 import os
 from colorama import Fore, init
 
+
 subprocess.run(["figlet", "CaSH"], text=True)
 print("CaSH: Basic lightweight shell")
 init()
@@ -35,6 +36,13 @@ while True:
   elif cmd == "install":
     inst = input("Enter package name (pacman): ")
     subprocess.run(["sudo", "pacman", "-Syu", inst], text=True)
+
+  elif cmd.lower() == "clear":
+    if os.name == "nt":
+      subprocess.run("cls", shell=True)
+      
+    else:
+      subprocess.run("clear", shell=True)
 
   else:
     print("Huh!? C-command not found... Maybe we will add this command on the next update!")
