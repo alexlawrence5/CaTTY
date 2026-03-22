@@ -3,6 +3,8 @@ import subprocess
 import time
 from colorama import Fore, init
 
+subprocess.run(["figlet", "CaSH"], text=True)
+print("CaSH: Basic lightweight shell")
 init()
 
 while True:
