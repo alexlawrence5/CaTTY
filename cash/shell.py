@@ -13,21 +13,6 @@ while True:
     exit()
 
   if cmd.startswith("sleep "):
-#!/usr/bin/python3
-import subprocess
-import time
-from colorama import Fore, init
-
-init()
-
-while True:
-  cmd = input(Fore.RED + "$ ")
-
-  if cmd.lower() == "quit":
-    print("Huh? Where are you going?")
-    exit()
-
-  if cmd.startswith("sleep "):
     try:
       sec = float(cmd[6:])
       time.sleep(sec)
